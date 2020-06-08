@@ -1,5 +1,5 @@
 const BotDiscord = require("./botdiscord")
-const invitetoserv = "https://discord.com/api/oauth2/authorize?client_id=715180721794187286&permissions=1812462657&scope=bot"
+const invitetoserv = "https://discord.com/api/oauth2/authorize?client_id=719355770629652500&permissions=1608514801&scope=bot"
 
 
 module.exports = class gestionnaireDiscord{
