@@ -4,6 +4,7 @@ const ReadLine = require('readline');
 const RiveScript = require('rivescript');
 const Chalk = require('chalk');
 
+
 const bot = new RiveScript();
 const readLine = ReadLine.createInterface({
     input : process.stdin,
