@@ -1,0 +1,30 @@
+{
+  "name": "ChatBot",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "directories": {
+    "test": "test"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/MalickNdoye/ChatBot.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/MalickNdoye/ChatBot/issues"
+  },
+  "homepage": "https://github.com/MalickNdoye/ChatBot#readme",
+  "dependencies": {
+    "chalk": "^4.0.0",
+    "discord.js": "^12.2.0",
+    "express": "^4.17.1",
+    "lowdb": "^1.0.0",
+    "readline": "^1.3.0",
+    "rivescript": "^2.1.0"
+  }
+}
