@@ -2,11 +2,11 @@ const Discord = require('discord.js');
 const client = new Discord.Client();
 const PREFIX = "+";
 const Bot = require('./bot')
-
+const DISCORD_BOT_TOKEN = NzE5MzU1NzcwNjI5NjUyNTAw.Xt4OhQ.jzmbsx2SvCuequmjl1Ym-BdQuMs;
 module.exports = class BotDiscord{
     constructor(){
-        client.login(NzE5MzU1NzcwNjI5NjUyNTAw.Xt2Ofw.fyGyCee5hPG1ASSYUWNx0lDUUWY);
-        this.bots = []; // Je met ici en place la liste des bots de discussions qui sont présents sur le serveur.
+        client.login(DISCORD_BOT_TOKEN);
+        this.bots = [];
     }
 
     static addChatBot(id, brain, channel){

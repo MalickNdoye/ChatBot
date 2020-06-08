@@ -2,8 +2,11 @@ const express = require('express')
 const app = express();
 const Bot = require('./bot');
 const Database = require('./database');
+const DiscordBot = require('./botdiscord');
+const GestionnaireDiscord = require('./gestionnaireDiscord')
 var bodyParser = require('body-parser');
 var urlencodedparser = bodyParser.urlencoded({ extended: false });
+
 
 app.get('/bots/',function(req,res){
     let id = req.query.id;
@@ -18,6 +21,7 @@ app.get('/bots/',function(req,res){
         }
         else
         {
+            res.send('basicBrain');
             console.log("Le bot " + parseInt(id) + " n'existe pas");
         }
     }
@@ -33,5 +37,6 @@ app.post('/bots', urlencodedparser, function(req,res){
 });
 
 app.listen(8080,function(){
+    GestionnaireDiscord.addBot(1,'basiBrain','Chatbot');
     console.log('Ca tourne.');
 });

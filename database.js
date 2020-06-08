@@ -1,16 +1,33 @@
-const low = require('lowdb');
-const FileSync = require('lowdb/adapters/FileSync');
+const MongoClient = require('mongodb').MongoClient;
 
-const adapter = new FileSync('db.json');
-const db = low(adapter);
+const test = require('assert');
 
-db.defaults({ bots : [] }).write();
+// Connection url
 
-module.exports = class Database {
-    static addBot(bot) {
-        db.get('bots').push(bot).write();
-    }
-    static getBot(id) {
-        return db.get('bots').find({id : id}).value();
-    }
-}
+const url = 'mongodb://cloud.mongodb.com/v2/5ec3034d4c7ad81b7d5a80ca#clusters';
+
+// Database Name
+
+const dbName = 'WebService';
+
+// Connect using MongoClient
+
+MongoClient.connect(url, function(err, client) {
+
+// Use the admin database for the operation
+
+    const adminDb = client.db(dbName).admin();
+
+// List all the available databases
+
+    adminDb.listDatabases(function(err, dbs) {
+
+        test.equal(null, err);
+
+        test.ok(dbs.databases.length > 0);
+
+        client.close();
+
+    });
+
+});
